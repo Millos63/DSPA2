@@ -81,7 +81,7 @@ function drawDate(value)
 //Funcion para dibujar la hora abajo del reloj
 function drawHour(value)
 {
-      context.fillText(value, canvas.width/4, canvas.height/2 - 65)
+      context.fillText(value, canvas.width/4 + 55, canvas.height/2 - 65)
 }
 //Funcion para dibujar los minutos
 function drawMinutes(value)
@@ -91,7 +91,7 @@ function drawMinutes(value)
 //Funcion para dibujar los segundos 
 function drawSeconds(value)
 {
-      context.fillText(value, canvas.width/4 * 3, canvas.height/2 - 65)
+      context.fillText(value, canvas.width/4 * 3 - 50, canvas.height/2 - 65)
 }
 
 //Funcion drawHands que hara las manecillas del reloj
@@ -119,8 +119,8 @@ function drawHands()
       
 
       //Para dibujar la hora abajo del reloj
-      drawHour(hour + "       :");
-      drawMinutes(minutes + "       :");
+      drawHour(hour + " :");
+      drawMinutes(minutes + " :");
       drawSeconds(seconds)
       
 }
