@@ -3,7 +3,9 @@ var context = canvas.getContext('2d'),
 fontHeight = 15,
 margin = 35,
 handTruncation = canvas.width / 25,
-hourHandTruncation = canvas.width / 10,
+hourHandTruncation = canvas.width / 7,
+minutesHandTruncation = canvas.width / 10,
+secondsHandTruncation = canvas.width / 16,
 numeralSpacing = -10,
 radius = canvas.width / 3 - margin, 
 //Superficie: ancho x alto 300 x 150.
@@ -60,6 +62,7 @@ function drawNumerals()
 //Funcion drawHand Dibujara una de las manecillas
 function drawHand(value)
 {
+
                   //360 grados
       var angle = (Math.PI * 2) * (value/60) - Math.PI/2;  
       var handRadius = radius - handTruncation;
@@ -75,13 +78,29 @@ function drawDate(value)
       context.fillText(value,0,canvas.height);
 }
 
+//Funcion para dibujar la hora abajo del reloj
+function drawHour(value)
+{
+      context.fillText(value, canvas.width/4, canvas.height/2 - 65)
+}
+//Funcion para dibujar los minutos
+function drawMinutes(value)
+{
+      context.fillText(value, canvas.width/2, canvas.height/2 - 65)
+}
+//Funcion para dibujar los segundos 
+function drawSeconds(value)
+{
+      context.fillText(value, canvas.width/4 * 3, canvas.height/2 - 65)
+}
 
 //Funcion drawHands que hara las manecillas del reloj
 function drawHands()
 {
       var date = new Date, 
       hour = date.getHours();     
-      
+      minutes = date.getMinutes();
+      seconds = date.getSeconds();
       //Operador ternario
 
       //Condicion de pregunta ? Si es cierto es esto : Y si es falso es esto
@@ -93,10 +112,16 @@ function drawHands()
       }
       else 
       hour = hour;*/
-      drawHand(hour * 5 + (date.getMinutes()/60)*5);
-      drawHand(date.getMinutes());
-      drawHand(date.getSeconds())
-      drawDate(date);
+
+      drawHand(hour * 5 + (date.getMinutes()/60)*5, handTruncation = hourHandTruncation, context.strokeStyle = 'red');
+      drawHand(date.getMinutes(), handTruncation = minutesHandTruncation, context.strokeStyle = 'green');
+      drawHand(date.getSeconds(), handTruncation = secondsHandTruncation, context.strokeStyle = 'blue')
+      
+
+      //Para dibujar la hora abajo del reloj
+      drawHour(hour + "       :");
+      drawMinutes(minutes + "       :");
+      drawSeconds(seconds)
       
 }
 //Inicializamos
