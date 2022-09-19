@@ -4,7 +4,8 @@ var context = canvas.getContext("2d");
 var spriteSheet = new Image();
 
 
-//Funcion que conecte coordesnada .
+
+//Funcion que conoce coordenadas.
 function windowToCanvas(canvas,X,Y)
 {
       var bounds = canvas.getBoundingClientRect();
