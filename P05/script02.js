@@ -89,73 +89,9 @@ ctx.stroke();
 ctx.strokeStyle = "blue";
 ctx.fillStyle = "red";
 
-//Variables para la posición y el radio
-var X = 60;
-var Y = 420;
-var R = 40;
 // El ángulo de partida ap y el ángulo final af
 var ap = Math.PI;
 var af = (Math.PI / 180) * 90;
-// Las coordenadas del punto de partida en la circunferencia
-var XapI = X+R * Math.cos(ap);
-var YapI = Y+R * Math.sin(ap);
-//Las coordenadas del punto final de la circunferencia
-var XapF = X+R * Math.cos(af);
-var YapF = Y+R * Math.sin(af);
-
-//Borde
-ctx.beginPath();
-ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(X,Y);
-ctx.lineTo(XapI,YapI);
-ctx.arc(X, Y, R, ap, af, true); //Aqui el angulo es en radianes no en grados. 
-ctx.moveTo(X,Y);
-ctx.lineTo(XapF,YapF);
-ctx.stroke();
-ctx.closePath();
-
-//Relleno
-ctx.beginPath();
-X = 60;
-Y = 480;
-// Las coordenadas del punto de partida en la circunferencia
-var XapI = X+R * Math.cos(ap);
-var YapI = Y+R * Math.sin(ap);
-//Las coordenadas del punto final de la circunferencia
-var XapF = X+R * Math.cos(af);
-var YapF = Y+R * Math.sin(af);
-
-ctx.stroke();
-ctx.beginPath();
-ctx.moveTo(X,Y);
-ctx.lineTo(XapI,YapI);
-ctx.arc(X, Y, R, ap, af, true); //Aqui el angulo es en radianes no en grados. 
-ctx.moveTo(X,Y);
-ctx.lineTo(XapF,YapF);
-ctx.fill();
-ctx.closePath();
-
-//Relleno y lineas
-ctx.beginPath();
-X = 60;
-Y = 540;
-// Las coordenadas del punto de partida en la circunferencia
-var XapI = X+R * Math.cos(ap);
-var YapI = Y+R * Math.sin(ap);
-//Las coordenadas del punto final de la circunferencia
-var XapF = X+R * Math.cos(af);
-var YapF = Y+R * Math.sin(af);
-
-ctx.beginPath();
-ctx.moveTo(X,Y);
-ctx.lineTo(XapI,YapI);
-ctx.arc(X, Y, R, ap, af, true); //Aqui el angulo es en radianes no en grados. 
-ctx.moveTo(X,Y);
-ctx.lineTo(XapF,YapF);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
 
 
 
@@ -220,7 +156,7 @@ function pizzaContornoRelleno(X, Y, R)
 
 pizzaBorde(60,420,40);
 pizzaRelleno(60, 480, 40);
-pizzaContornoRelleno(60, 540, 40);
+pizzaContornoRelleno(60,540,40);
 
 
 
