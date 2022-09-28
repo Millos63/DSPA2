@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>P06</title>
+    <style>
+        body
+        {
+            background-color: gray;
+        }
+        #canvas
+        {
+            background-color: white; 
+            cursor: pointer;
+            box-shadow: 10px 10px 20px rgba(0, 0 ,0, 0.6);
+        }
+        #controls
+        {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="canvas" width="1200" height="600" style="background-color: rgb(73, 73, 73);">no canvas</canvas>
+    <canvas id="canvas" width="1200" height="600" style="background-color: white;">no canvas</canvas>
+    <div id="controls">
+        Stroke color:
+        <select id = "strokeStyleSelect">
+            <option value="blue">blue</option>
+            <option value="black">black</option>
+            <option value="orange">orange</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="purple">purple</option>
+            <option value="yellow">yellow</option>
+            <option value="cyan">cyan</option>
+        </select>
+        guides:
+        <input id="guidesCheckbox" type="checkbox" checked="true">
+        <input id="eraseAllButton" type="button" value="Erase all">
+
+    </div>
     <script src="script02.js"></script>
 </body>
 </html>
