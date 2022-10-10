@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Parcial</title>
+    <style>
+        body
+        {
+            background-color: gray;
+        }
+        #canvas
+        {
+            background-color: white; 
+            cursor: pointer;
+            box-shadow: 10px 10px 20px rgba(0, 0 ,0, 0.6);
+        }
+        #controls
+        {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="600" style="background-color: white;">no canvas</canvas>
+    <div id="controls">
+
+        <!--PARA ELEGIR LA FIGURA A DIBUJAR-->
+        Figure:
+        <select id="figure">            
+            <option value="line">Line <img src=></option>
+            <option value="circle">Circle </option>
+            <option value="triangle">Triangle</option>
+            <option value="diamond">Diamond</option>
+            <option value="square">Square</option>
+            <option value="parallelogram">Parallelogram</option>
+            <option value="pentagon">Pentagon</option>
+            <option value="hexagon">Hexagon</option>
+            <option value="heptagon">Heptagon</option>
+            <option value="octagon">Octagon</option>
+            <option value="nonagon">Nonagon</option>
+            <option value="decagon">Decagon</option>
+            
+        </select>
+        
+        <!--PALETA DE COLOR PARA ELEGIR EL COLOR-->
+        Stroke Color:
+         <input id="strokeStyleSelect" type="color">
+        <!--BOTON PARA QUE LAS FIGURAS SE RELLENEN-->
+        Fill Color:
+        <input id="fillCheckbox" type="checkbox" checked>
+        <input id="fillStyleSelect" type="color">
+
+        Line size:
+        <select id="lineSize">
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="1.5">1.5</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5">2.5</option>
+            <option value="3.0">3.0</option>
+        </select>
+        
+        
+        <!--BOTON PARA LIMPIAR EL CANVAS-->
+        <input id="eraseAllButton" type="button" value="Erase all">
+
+        guides:
+        <input id="guidesCheckbox" type="checkbox" checked>
+        
+        
+
+
+    </div>
+    <script src="script02.js"></script>
+</body>
+</html>
